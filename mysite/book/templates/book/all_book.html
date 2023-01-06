@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询数据</title>
+</head>
+<body>
+    <table border="1" style="margin:15px auto " border-spacing="10,15">
+    <tr>
+        <th>书籍id</th>
+        <th>书籍名称</th>
+        <th>所属店铺</th>
+        <th>零售价</th>
+        <th>创建时间</th>
+        <th>出版社id</th>
+        <th>库存</th>
+        <th>操作</th>
+    </tr>
+    {% for book in all_book %}
+        <tr>
+            <td>{{ book.book_id }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.store }}</td>
+            <td>{{ book.price }}</td>
+            <td>{{ book.create_time }}</td>
+            <td>{{ book.publish_id }}</td>
+            <td>{{ book.num }}</td>
+            <td>
+                {% if book.status == '1' %}
+                    <a href="/book/change_status?book_id={{ book.book_id }}&status=0">下架</a>
+                    <a href="/book/detail/{{ book.book_id }}">查看详情</a>
+                {% endif %}
+
+                {% if book.status == '0' %}
+                    <a href="/book/change_status?book_id={{ book.book_id }}&status=1">上架</a>
+                    <a href="">编辑</a>
+                    <a href="">删除</a>
+                {% endif %}
+
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+</body>
+</html>

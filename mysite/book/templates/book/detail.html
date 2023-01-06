@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情页</title>
+</head>
+<body>
+<form action="/book/detail/{{ book.book_id }}" method="GET">
+    <p>
+        书名 <input type="text" value="{{ book.title }}" disabled="disabled">
+    </p>
+    <p>
+        商家 <input type="text" value="{{ book.store }}" disabled="disabled">
+    </p>
+    <p>
+        更新时间 <input type="text" value="{{ book.updata_time }}" disabled="disabled">
+    </p>
+        <p>
+        售价 <input type="text" value="{{ book.price }}" disabled="disabled">
+    </p>
+    <a href="javascript:history.back(-1)"> <input type="button" value="返回" > </a>
+
+</form>
+
+
+</body>
+</html>
