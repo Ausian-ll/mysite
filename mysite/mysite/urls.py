@@ -25,4 +25,5 @@ urlpatterns = [
     path('sport/', include('sport.urls')),
     path('book/',include('book.urls'))
 #A提交的代码
+    #A提交的代码二
 ]
